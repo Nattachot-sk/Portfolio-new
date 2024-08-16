@@ -1,0 +1,39 @@
+.navbar {
+    width: 60%;
+    height: 140px; /* เปลี่ยนความสูงให้เหมาะสม */
+    margin: auto;
+    border-radius: 20px;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: background-color 0.3s, box-shadow 0.3s; /* เพิ่มการเปลี่ยนแปลง */
+    background-color: transparent; /* พื้นหลังโปร่งใสเมื่อเริ่มต้น */
+    
+  }
+  
+  .navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.9); /* เปลี่ยนเป็นพื้นหลังขาวเมื่อ scroll */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+    top: -10px;
+  }
+
+  a.under{
+      position: relative;
+      text-transform: uppercase;
+  }
+  a.under:after{
+    content: "";
+    position: absolute;
+    background-color: aqua;
+    height: 5px;
+    width: 0;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+    border-radius: 30px;
+  }
+a.under:hover:after{
+  width: 100%;
+}
