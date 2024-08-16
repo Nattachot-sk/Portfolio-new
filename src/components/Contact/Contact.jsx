@@ -20,11 +20,11 @@ import {
 function Contact() {
   return (
     <div
-      className="w-full h-[950px] flex justify-center items-center contact-bg "
+      className="w-full sm:h-[950px] h-auto flex justify-center items-center contact-bg "
       id="contact"
     >
-      <div className="w-[1200px] h-[650px] bg-amber-500 shadow-lg">
-        <div className="flex w-full h-full">
+      <div className="w-[1200px] sm:h-[650px] bg-amber-500 shadow-lg">
+        <div className="sm:flex w-full h-full">
           <div className="flex-1 bg-white">
             <div className="flex justify-center items-center">
               <h1 className="text-[36px]">Contact Us</h1>
@@ -80,18 +80,20 @@ function Contact() {
             </div>
             <hr className="mt-10" />
             <div className="flex justify-center items-center">
-              <ul className="flex gap-5 mt-3">
+              <ul className="flex gap-5 mt-3 mb-2 sm:mb-0">
                 <li className="w-[40px] h-[40px] flex justify-center items-center border-2 border-purple-500 rounded-full bg-purple-400 relative">
                   <a
-                    href=""
+                    href="https://www.facebook.com/profile.php?id=100008407035436"
                     className=" text-white text-[24px] "
+                    target="_blank"
                   >
                     <FontAwesomeIcon icon={faFacebookF} />
                   </a>
                 </li>
                 <li className="w-[40px] h-[40px] flex justify-center items-center border-2 border-purple-500 rounded-full bg-purple-400 relative">
                   <a
-                    href=""
+                    href="https://www.instagram.com/ntc_sk/"
+                    target="_blank"
                     className=" text-white text-[24px] "
                   >
                     <FontAwesomeIcon icon={faInstagram} />
@@ -99,24 +101,27 @@ function Contact() {
                 </li>
                 <li className="w-[40px] h-[40px] flex justify-center items-center border-2 border-purple-500 rounded-full bg-purple-400 relative">
                   <a
-                    href=""
+                    href="https://github.com/ntc-dodo"
                     className=" text-white text-[24px] "
+                    target="_blank"
                   >
                     <FontAwesomeIcon icon={faGithub} />
                   </a>
                 </li>
                 <li className="w-[40px] h-[40px] flex justify-center items-center border-2 border-purple-500 rounded-full bg-purple-400 relative">
                   <a
-                    href=""
+                    href="https://www.tiktok.com/@ntc_dodo"
                     className=" text-white text-[24px] "
+                    target="_blank"
                   >
                     <FontAwesomeIcon icon={faTiktok} />
                   </a>
                 </li>
                 <li className="w-[40px] h-[40px] flex justify-center items-center border-2 border-purple-500 rounded-full bg-purple-400 relative">
                   <a
-                    href=""
+                    href="https://www.youtube.com/@115-lo9gf"
                     className=" text-white text-[24px] "
+                    target="_blank"
                   >
                     <FontAwesomeIcon icon={faYoutube} />
                   </a>
@@ -164,7 +169,7 @@ function Contact() {
                 </div>
                 <div>
                   <button
-                    className="w-full h-10 bg-purple-400 mt-10 rounded-xl"
+                    className="w-full h-10 bg-purple-400 mt-10 rounded-xl mb-5 sm:mb-0"
                     type="submit"
                   >
                     <span className="font-bold text-[20px] text-white ">

@@ -21,13 +21,13 @@ function Hero() {
       <div className="relative z-10">
         <Navbar />
       </div>
-      <div className="flex mt-40">
-        <div className="flex-1 flex justify-center items-center ">
-          <div className="w-[650px] h-[650px] mt-[120px] ml-40">
-            <h1 className="text-[30px]">My Portfolio</h1>
+      <div className="sm:flex block mt-40">
+        <div className="sm:flex-1 flex justify-center items-center ">
+          <div className="sm:w-[650px] sm:h-[650px] sm:mt-[120px] sm:flex-col justify-center items-center ml-10 sm:pl-20">
+            <h1 className="text-[16px] sm:text-[30px]">My Portfolio</h1>
             <h1 className="font-bold text-[70px]">My name</h1>
 
-            <h1 className="text-[24px] font-bold text-violet-700">
+            <h1 className="text-[14px] sm:text-[26px] font-bold text-violet-700">
               {" "}
               <Typewriter
                 options={{
@@ -36,31 +36,32 @@ function Hero() {
                     "UX/UI",
                     "Designer",
                     "Landing Website",
+                    "Full Stack Web",
                   ],
                   autoStart: true,
                   loop: true,
                 }}
               />
             </h1>
-            <p className="text-[24px]">
+            <p className="text-[14px] sm:text-[24px] text-wrap">
               I am a Junior Developer Lorem ipsum, dolor sit amet consectetur
               adipisicing elit. Nihil, ea.
             </p>
             <div className="mt-10">
-              <hr />
+              <hr className="w-[80%] sm:w-[100%] mb-20"/>
             </div>
           </div>
         </div>
-        <div className="flex-1">
-          <div className="w-[650px] h-[650px] rounded-full bg-white shadow-2xl  shadow-indigo-700 relative ">
+        <div className="sm:flex-1 ">
+          <div className="w-[300px] h-[300px] sm:w-[650px] sm:h-[650px] flex justify-center items-center rounded-full bg-white shadow-2xl  shadow-indigo-700 relative left-20 sm:-left-20">
             <div className="absolute ">
               <div className="surprise-bg">
                 <animated.div style={spring}>
                   <img
                     src="../img/human.png"
                     alt=""
-                    className="w-[650px] h-[650px]  mx-auto -z-10"
-                  />  
+                    className="sm:w-[650px] sm:h-[650px] w-[200px] h-[250px] mx-auto -z-10"
+                  />
                 </animated.div>
               </div>
             </div>

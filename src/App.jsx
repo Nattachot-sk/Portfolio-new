@@ -7,6 +7,7 @@ import About from './components/About/About';
 import Skill from './components/Skill/Skill';
 import Contact from './components/Contact/Contact';
 import Myworking from './components/Work/Myworking';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Skill />
         <Myworking />
         <Contact />
+        <Footer />
     </>
   )
 }
