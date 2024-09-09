@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
+import { useSpring, animated } from "@react-spring/web";
 import "./Skill.css";
 
 function Skill() {
@@ -69,14 +70,51 @@ function Skill() {
       img: "./img/tools/postman.png",
     },
   ];
-
+  const ref = useRef();
+  const [isVisible, setIsVisible] = useState(false);
+  const props = useSpring({
+    opacity: isVisible ? 1 : 0,
+    transform: isVisible ? "translateY(0px)" : "translateY(200px)",
+    config: { tension: 280, friction: 60 },
+  });
+  const underprops = useSpring({
+    opacity: isVisible ? 1 : 0,
+    transform: isVisible ? "translateY(0px)" : "translateY(200px)",
+    config: { tension: 280, friction: 60 },
+  });
+  const leftprops = useSpring({
+    opacity: isVisible ? 1 : 0,
+    transform: isVisible ? "translateX(0)" : "translateX(-200px)",
+    config: { tension: 280, friction: 60 },
+  });
+  const rightprops = useSpring({
+    opacity: isVisible ? 1 : 0,
+    transform: isVisible ? "translateX(0)" : "translateX(200px)",
+    config: { tension: 280, friction: 60 },
+  });
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
   return (
-    <div className="w-full h-[1300px] flex skill-bg" id="skill">
+    <div className="w-full h-[1300px] flex justify-center skill-bg " id="skill">
+      <animated.div style={props} ref={ref}>
       <div className="w-[1200px] h-[650px] my-[200px] mx-auto grid grid-cols-2 gap-5">
         <div className="col-span-2 sm:col-span-1">
           <div className="w-full flex justify-center">
             <h1 className="text-[36px]">Frontend</h1>
           </div>
+          <animated.div style={leftprops} ref={ref}>
           <div className="grid grid-cols-3 gap-5 mx-auto mt-10  p-5">
             {frontend.map((fend, index) => {
               return (
@@ -95,11 +133,13 @@ function Skill() {
               );
             })}
           </div>
+          </animated.div>
         </div>
         <div className="col-span-2 sm:col-span-1">
           <div className="w-full flex justify-center">
             <h1 className="text-[36px]">Backend</h1>
           </div>
+          <animated.div style={rightprops} ref={ref}>
           <div className="grid grid-cols-3 gap-5 mx-auto mt-10  p-5 ">
             {backend.map((bend, index) => {
               return (
@@ -118,12 +158,14 @@ function Skill() {
               );
             })}
           </div>
+          </animated.div>
         </div>
 
         <div className="col-span-2 mx-auto">
           <div className="w-full flex justify-center">
             <h1 className="text-[36px]">Tools</h1>
           </div>
+          <animated.div style={underprops} ref={ref}>
           <div className="grid grid-cols-3 gap-5 mx-auto mt-10  p-5">
             {tools.map((tool, index) => {
               return (
@@ -143,8 +185,10 @@ function Skill() {
               );
             })}
           </div>
+          </animated.div>
         </div>
       </div>
+      </animated.div>
     </div>
   );
 }

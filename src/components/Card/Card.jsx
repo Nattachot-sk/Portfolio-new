@@ -6,7 +6,7 @@ function Card() {
     {
       id: 1,
       name: "first portfolio",
-      image: "",
+      image: "./project/fisrt.PNG",
       description: "lorem20",
       demolink: "https://first-porfolio-henna.vercel.app/",
       githublink: "https://github.com/ntc-dodo/First-Porfolio",
@@ -21,11 +21,19 @@ function Card() {
     },
     {
       id: 3,
-      name: "first",
-      image: "",
+      name: "LandingPage",
+      image: "./project/r1.PNG",
       description: "lorem20",
-      demolink: "",
-      githublink: "",
+      demolink: "https://testwork-1.vercel.app/",
+      githublink: "https://github.com/ntc-dodo/testwork-1",
+    },
+    {
+      id: 4,
+      name: "LandingPage",
+      image: "./project/cky.PNG",
+      description: "lorem20",
+      demolink: "https://chotkarnyang.vercel.app/",
+      githublink: "https://github.com/ntc-dodo/chotkarnyang",
     },
 
   ];

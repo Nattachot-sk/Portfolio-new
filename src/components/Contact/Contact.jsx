@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
+import { useSpring, animated } from "@react-spring/web";
 import "./Contact.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -6,7 +7,7 @@ import {
   faPhone,
   faUser,
   faComment,
-  faLocationDot
+  faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
@@ -14,15 +15,37 @@ import {
   faFacebookF,
   faInstagram,
   faTiktok,
-  faYoutube
+  faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 
 function Contact() {
+  const ref = useRef();
+  const [isVisible, setIsVisible] = useState(false);
+  const props = useSpring({
+    opacity: isVisible ? 1 : 0,
+    transform: isVisible ? "translateY(0px)" : "translateY(100px)",
+    config: { tension: 280, friction: 60 },
+  });
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
   return (
     <div
       className="w-full sm:h-[950px] h-auto flex justify-center items-center contact-bg "
       id="contact"
     >
+            <animated.div style={props} ref={ref}>
       <div className="w-[1200px] sm:h-[650px] bg-amber-500 shadow-lg">
         <div className="sm:flex w-full h-full">
           <div className="flex-1 bg-white">
@@ -68,11 +91,13 @@ function Contact() {
                   <div className="w-full flex">
                     <div className="w-[30px] h-[30px] rounded-full   relative mb-3">
                       <p className="text-purple-400 text-[24px] absolute left-[10px] ">
-                      <FontAwesomeIcon icon={faLocationDot} />
+                        <FontAwesomeIcon icon={faLocationDot} />
                       </p>
                     </div>
                     <div className="relative left-8 top-2">
-                      <h1 className="font-bold text-[18px]">316 tha wung lopburi 15150</h1>
+                      <h1 className="font-bold text-[18px]">
+                        316 tha wung lopburi 15150
+                      </h1>
                     </div>
                   </div>
                 </li>
@@ -126,7 +151,6 @@ function Contact() {
                     <FontAwesomeIcon icon={faYoutube} />
                   </a>
                 </li>
-                
               </ul>
             </div>
           </div>
@@ -182,6 +206,7 @@ function Contact() {
           </div>
         </div>
       </div>
+      </animated.div>
     </div>
   );
 }
