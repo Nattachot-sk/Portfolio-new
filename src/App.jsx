@@ -8,6 +8,7 @@ import Skill from './components/Skill/Skill';
 import Contact from './components/Contact/Contact';
 import Myworking from './components/Work/Myworking';
 import Footer from './components/Footer/Footer';
+import ScrollToTop from './components/ScrollTotop/ScrollToTop';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Myworking />
         <Contact />
         <Footer />
+        <ScrollToTop />
     </>
   )
 }
