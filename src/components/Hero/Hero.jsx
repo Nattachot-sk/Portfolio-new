@@ -58,15 +58,15 @@ function Hero() {
             </div>
           </div>
         </div>
-        <div className="flex-1 flex justify-center items-center mt-10 sm:mt-0">
+        <div className="flex-1 flex justify-center items-center mt-10 sm:mt-0 rounded-full">
           <div className="w-[300px] h-[300px] sm:w-[300px] sm:h-[300px] md:w-[650px] md:h-[650px] flex justify-center items-center rounded-full bg-white shadow-2xl shadow-indigo-700 relative sm:-left-20">
-            <div className="absolute">
-              <div className="surprise-bg">
-                <animated.div style={spring}>
+            <div className="absolute rounded-full ">
+              <div className="rounded-full hover:border-2 hover:border-black transition-all">
+                <animated.div style={spring} >
                   <img
                     src="../img/ntc.jpg"
                     alt=""
-                    className="w-[200px] h-[250px] md:w-[450px] md:h-[450px] mx-auto rounded-full object-cover border-2 border-black"
+                    className="w-[200px] h-[250px] md:w-[450px] md:h-[450px] flex justify-center rounded-full object-cover border-2 border-black  "
                   />
                 </animated.div>
               </div>
