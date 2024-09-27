@@ -64,9 +64,9 @@ function Hero() {
               <div className="surprise-bg">
                 <animated.div style={spring}>
                   <img
-                    src="../img/human.png"
+                    src="../img/ntc.jpg"
                     alt=""
-                    className="w-[200px] h-[250px] md:w-[650px] md:h-[650px] mx-auto"
+                    className="w-[200px] h-[250px] md:w-[450px] md:h-[450px] mx-auto rounded-full object-cover border-2 border-black"
                   />
                 </animated.div>
               </div>

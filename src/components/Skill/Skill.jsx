@@ -107,11 +107,11 @@ function Skill() {
     };
   }, []);
   return (
-    <div className="w-full h-[1300px] flex justify-center skill-bg " id="skill">
+    <div className="w-full h-[1300px] flex justify-center items-center skill-bg " id="skill">
       <animated.div style={props} ref={ref}>
-      <div className="w-[1200px] h-[650px] my-[200px] mx-auto grid grid-cols-2 gap-5">
-        <div className="col-span-2 sm:col-span-1">
-          <div className="w-full flex justify-center">
+      <div className="  mx-auto grid grid-cols-2 gap-5 ">
+        <div className="col-span-2 sm:col-span-1 ">
+          <div className="w-full flex justify-center ">
             <h1 className="text-[36px]">Frontend</h1>
           </div>
           <animated.div style={leftprops} ref={ref}>

@@ -8,7 +8,7 @@ function Footer() {
 
         </div>
         <div className='flex justify-center items-center'>
-            <h1 className='font-bold tex-[40px]'>Copyright © 2024 dodo-ntc</h1>
+            <h1 className='font-bold tex-[40px] text-white'>Copyright © 2024 dodo-ntc</h1>
         
         </div>
     </div>
